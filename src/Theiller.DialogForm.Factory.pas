@@ -5,6 +5,7 @@ interface
 uses
   classes,
   Theiller.DialogForm.Intf,
+  Theiller.DialogForm.Consts,
   Theiller.DialogForm.Types,
   Theiller.DialogForm.Core;
 
@@ -33,8 +34,7 @@ end;
 class function TDialogFactoy.NewError(const ASubject: String; AMessage: String): IDialogForm;
 begin
   Result := TDialogForm.New
-              .SetType(dtInformation)
-              .SetIcon(diError)
+              .SetType(dtError)
               .SetSubject(ASubject)
               .SetMessage(AMessage)
               .Show;
@@ -44,7 +44,7 @@ class function TDialogFactoy.NewQuestion(const ASubject: String;
   AMessage: String; AMethodYes, AMethodNo: TThreadMethod): IDialogForm;
 begin
   Result := TDialogForm.New
-              .SetType(dtQuestion)
+              .SetType(dtConfirmation)
               .SetSubject(ASubject)
               .SetMessage(AMessage)
               .SetMethodYES(AMethodYes)
