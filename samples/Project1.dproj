@@ -120,6 +120,7 @@
             <Form>DialogQuestionView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="..\src\Theiller.DialogForm.Consts.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

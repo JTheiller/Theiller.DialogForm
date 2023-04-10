@@ -4,17 +4,20 @@ interface
 
 uses
   classes,
+  System.SysUtils,
   Theiller.DialogForm.Intf,
   Theiller.DialogForm.Consts,
   Theiller.DialogForm.Types,
   Theiller.DialogForm.Core;
 
+
+
 type
   TDialogFactoy = class
   public
-    class function NewInformation(const ASubject: String; AMessage: String): IDialogForm; overload;
+    class function NewInformation(const ASubject: String; AMessage: String): IDialogForm;
     class function NewError(const ASubject: String; AMessage: String): IDialogForm;
-    class function NewQuestion(const ASubject: String; AMessage: String; AMethodYes, AMethodNo: TThreadMethod): IDialogForm;
+    class function NewQuestion(const ASubject: String; AMessage: String; AMethodYes, AMethodNo: TProc): IDialogForm;
   end;
 
 implementation
@@ -41,7 +44,7 @@ begin
 end;
 
 class function TDialogFactoy.NewQuestion(const ASubject: String;
-  AMessage: String; AMethodYes, AMethodNo: TThreadMethod): IDialogForm;
+  AMessage: String; AMethodYes, AMethodNo: TProc): IDialogForm;
 begin
   Result := TDialogForm.New
               .SetType(dtConfirmation)

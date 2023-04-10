@@ -4,6 +4,7 @@ interface
 
 uses
   System.Classes,
+  System.SysUtils,
   Theiller.DialogForm.Types;
 
 type
@@ -11,8 +12,8 @@ type
     function SetType(const Value: TDialogType): IDialogForm;
     function SetSubject(const Value: String): IDialogForm;
     function SetMessage(const Value: String): IDialogForm;
-    function SetMethodYES(const Value: TThreadMethod): IDialogForm;
-    function SetMethodNO(const Value: TThreadMethod): IDialogForm;
+    function SetMethodYES(const Value: TProc): IDialogForm;
+    function SetMethodNO(const Value: TProc): IDialogForm;
     function Show: IDialogForm;
   end;
 

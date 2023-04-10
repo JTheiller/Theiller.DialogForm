@@ -3,7 +3,10 @@ unit Theiller.DialogForm.Core;
 interface
 
 uses
-  System.Classes, Winapi.Windows, Vcl.Controls,
+  System.Classes,
+  System.SysUtils,
+  Winapi.Windows,
+  Vcl.Controls,
   Theiller.DialogForm.Intf,
   Theiller.DialogForm.Types,
   Theiller.DialogForm.Consts;
@@ -14,16 +17,16 @@ type
     FType: TDialogType;
     FSubject: String;
     FMessage: String;
-    FMethodYES: TThreadMethod;
-    FMethodNO: TThreadMethod;
+    FMethodYES: TProc;
+    FMethodNO: TProc;
     procedure InstanceForm;
   public
     class function New: IDialogForm;
     function SetType(const Value: TDialogType): IDialogForm;
     function SetSubject(const Value: String): IDialogForm;
     function SetMessage(const Value: String): IDialogForm;
-    function SetMethodYES(const Value: TThreadMethod): IDialogForm;
-    function SetMethodNO(const Value: TThreadMethod): IDialogForm;
+    function SetMethodYES(const Value: TProc): IDialogForm;
+    function SetMethodNO(const Value: TProc): IDialogForm;
     function Show: IDialogForm;
     property &Type: TDialogType read FType write FType;
 end;
@@ -64,8 +67,10 @@ begin
         Caption := FSubject;
         memoMessage.Text := FMessage;
         case ShowModal of
-          mrYes : if Assigned(FMethodYES) then
-                     FMethodYES;
+          mrYes : begin
+                    if Assigned(FMethodYES) then
+                       FMethodYES;
+                  end;
         else
           begin
             if Assigned(FMethodNO) then
@@ -97,14 +102,15 @@ begin
   FMessage := Value;
 end;
 
-function TDialogForm.SetMethodYES(const Value: TThreadMethod): IDialogForm;
+function TDialogForm.SetMethodYES(const Value: TProc): IDialogForm;
 begin
   Result := Self;
 
   FMethodYES := Value;
 end;
 
-function TDialogForm.SetMethodNO(const Value: TThreadMethod): IDialogForm;
+
+function TDialogForm.SetMethodNO(const Value: TProc): IDialogForm;
 begin
   Result := Self;
 

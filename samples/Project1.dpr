@@ -9,7 +9,8 @@ uses
   Theiller.DialogForm.Types in '..\src\Theiller.DialogForm.Types.pas',
   Theiller.DialogForm.View.Base in '..\src\Theiller.DialogForm.View.Base.pas' {DialogBaseView},
   Theiller.DialogForm.View.Information in '..\src\Theiller.DialogForm.View.Information.pas' {DialogInformationView},
-  Theiller.DialogForm.View.Question in '..\src\Theiller.DialogForm.View.Question.pas' {DialogQuestionView};
+  Theiller.DialogForm.View.Question in '..\src\Theiller.DialogForm.View.Question.pas' {DialogQuestionView},
+  Theiller.DialogForm.Consts in '..\src\Theiller.DialogForm.Consts.pas';
 
 {$R *.res}
 

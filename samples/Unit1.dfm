@@ -13,12 +13,21 @@ object Form1: TForm1
   Position = poDesktopCenter
   TextHeight = 15
   object Button1: TButton
-    Left = 192
-    Top = 152
-    Width = 329
+    Left = 56
+    Top = 96
+    Width = 281
     Height = 57
-    Caption = 'Button1'
+    Caption = 'Method'
     TabOrder = 0
     OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 351
+    Top = 96
+    Width = 274
+    Height = 57
+    Caption = 'Generic'
+    TabOrder = 1
+    OnClick = Button2Click
   end
 end
