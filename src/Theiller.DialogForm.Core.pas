@@ -80,6 +80,8 @@ begin
     dtQuestion   :begin
                      with TDialogQuestionView.Create(nil) do
                      begin
+                       Image1.Picture.Icon.Handle := LoadImage( 0, GetWindowsIcon, IMAGE_ICON, 0, 0, LR_DEFAULTSIZE or LR_SHARED );
+
                        Caption := FSubject;
                        memoMessage.Text := FMessage;
                        case ShowModal of
