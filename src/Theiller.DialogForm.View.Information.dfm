@@ -2,10 +2,6 @@ inherited DialogInformationView: TDialogInformationView
   Caption = 'DialogInformationView'
   TextHeight = 15
   inherited pnlBase: TPanel
-    inherited pnlMessage: TPanel
-      ExplicitLeft = 0
-      ExplicitWidth = 503
-    end
     inherited pnlButtons: TPanel
       object btnOK: TBitBtn
         AlignWithMargins = True

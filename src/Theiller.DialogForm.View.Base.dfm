@@ -30,7 +30,7 @@ object DialogBaseView: TDialogBaseView
       Height = 255
       Align = alClient
       BevelOuter = bvNone
-      TabOrder = 0
+      TabOrder = 1
       object memoMessage: TMemo
         AlignWithMargins = True
         Left = 3
@@ -53,7 +53,7 @@ object DialogBaseView: TDialogBaseView
       Height = 41
       Align = alBottom
       BevelOuter = bvNone
-      TabOrder = 1
+      TabOrder = 0
     end
     object Panel1: TPanel
       AlignWithMargins = True
