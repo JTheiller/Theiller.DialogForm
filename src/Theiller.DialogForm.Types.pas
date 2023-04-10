@@ -4,7 +4,7 @@ interface
 
 type
   DialogType = (dtInformation, dtQuestion);
-  DialogIcon = (diQuestion, diInformation, diExclamation, diError);
+  DialogIcon = (diInformation, diQuestion, diExclamation, diError);
 
 implementation
 
