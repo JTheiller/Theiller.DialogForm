@@ -45,6 +45,7 @@ procedure TDialogBaseView.doChangeType;
       dtConfirmation: Result := IDI_QUESTION;
     end;
   end;
+
 begin
   Image1.Picture.Icon.Handle := LoadImage( 0, GetWindowsIcon, IMAGE_ICON, 0, 0, LR_DEFAULTSIZE or LR_SHARED );
 end;
