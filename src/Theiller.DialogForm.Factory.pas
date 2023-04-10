@@ -10,10 +10,8 @@ uses
   Theiller.DialogForm.Types,
   Theiller.DialogForm.Core;
 
-
-
 type
-  TDialogFactoy = class
+  TDialogFactory = class
   public
     class function NewInformation(const ASubject: String; AMessage: String): IDialogForm;
     class function NewError(const ASubject: String; AMessage: String): IDialogForm;
@@ -24,7 +22,7 @@ implementation
 
 { TDialogFactoy }
 
-class function TDialogFactoy.NewInformation(const ASubject: String;
+class function TDialogFactory.NewInformation(const ASubject: String;
   AMessage: String): IDialogForm;
 begin
   Result := TDialogForm.New
@@ -34,7 +32,7 @@ begin
               .Show;
 end;
 
-class function TDialogFactoy.NewError(const ASubject: String; AMessage: String): IDialogForm;
+class function TDialogFactory.NewError(const ASubject: String; AMessage: String): IDialogForm;
 begin
   Result := TDialogForm.New
               .SetType(dtError)
@@ -43,7 +41,7 @@ begin
               .Show;
 end;
 
-class function TDialogFactoy.NewQuestion(const ASubject: String;
+class function TDialogFactory.NewQuestion(const ASubject: String;
   AMessage: String; AMethodYes, AMethodNo: TProc): IDialogForm;
 begin
   Result := TDialogForm.New

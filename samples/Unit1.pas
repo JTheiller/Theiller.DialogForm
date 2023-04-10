@@ -56,11 +56,11 @@ procedure TForm1.Button1Click(Sender: TObject);
 begin
   InitPtBr;
 
-  TDialogFactoy.NewInformation('My title','My message');
+  TDialogFactory.NewInformation('My title','My message');
 
-  TDialogFactoy.NewError('My title','My message');
+  TDialogFactory.NewError('My title','My message');
 
-  TDialogFactoy.NewQuestion('My title','My message using method',ExecuteYes,ExecuteNo);
+  TDialogFactory.NewQuestion('My title','My message using method',ExecuteYes,ExecuteNo);
 end;
 
 procedure TForm1.ExecuteYes;
@@ -75,7 +75,7 @@ end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
-  TDialogFactoy.NewQuestion('My title','My message using generic',
+  TDialogFactory.NewQuestion('My title','My message using generic',
                             procedure
                             begin
                               Button2.Caption := 'Generic Yes';
