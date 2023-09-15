@@ -1,6 +1,6 @@
 # Theiller.DialogForm
 
-### Boss install
+### Boss install new
 ```
 boss install https://github.com/JTheiller/Theiller.DialogForm
 ```
